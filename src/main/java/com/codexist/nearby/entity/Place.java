@@ -24,7 +24,6 @@ public class Place implements Serializable {
     String id;
 
 
-
     private Geometry geometry;
 
     private PlusCode plus_code;
@@ -44,3 +43,5 @@ public class Place implements Serializable {
 
     @DBRef
     List<Query> queries;
+
+}
