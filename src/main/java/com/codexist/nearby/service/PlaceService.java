@@ -5,6 +5,7 @@ import com.codexist.nearby.entity.Query;
 import com.codexist.nearby.mapper.NearByMapper;
 import com.codexist.nearby.payload.googleapiresult.PlaceResult;
 import com.codexist.nearby.payload.request.NearByRequest;
+import com.codexist.nearby.payload.response.NearByResponse;
 import com.codexist.nearby.repository.PlaceRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Value;
@@ -32,7 +33,7 @@ public class PlaceService {
     private final String BASE_URL = "https://maps.googleapis.com/maps/api/place/nearbysearch/json";
 
 
-    public ResponseEntity getNearbyPlaces(NearByRequest request) {
+    public ResponseEntity<List<NearByResponse>> getNearbyPlaces(NearByRequest request) {
 
         Query existingQuery = queryService.findQuery(request);
 
