@@ -14,7 +14,7 @@
 	<name>nearby</name>
 	<description>Google Places API Project</description>
 	<properties>
-		<java.version>11</java.version>
+		<java.version.release>11</java.version.release>
 	</properties>
 	<dependencies>
 		<dependency>
