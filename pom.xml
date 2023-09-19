@@ -15,6 +15,7 @@
 	<description>Google Places API Project</description>
 	<properties>
 		<java.version>11</java.version>
+
 	</properties>
 	<dependencies>
 		<dependency>
