@@ -6,10 +6,7 @@ import com.codexist.nearby.service.PlaceService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,8 +17,14 @@ public class PlaceController {
 
     private final PlaceService placeService;
 
+
     @GetMapping("/nearby")
-    public ResponseEntity<List<NearByResponse>> getNearbyPlaces(@RequestBody @Valid NearByRequest request) {
+    public ResponseEntity<List<NearByResponse>> getNearbyPlaces(@RequestParam("latitude") double latitude,
+                                                                @RequestParam("longitude") double longitude,
+                                                                @RequestParam("radius") int radius) {
+
+        NearByRequest request = NearByRequest.builder().latitude(latitude).longitude(longitude).radius(radius).build();
+
         return placeService.getNearbyPlaces(request);
     }
 

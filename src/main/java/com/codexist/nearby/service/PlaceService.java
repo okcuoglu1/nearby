@@ -45,7 +45,6 @@ public class PlaceService {
 
         }
 
-
         String url = BASE_URL +
                 "?location=" + request.getLatitude() + "," + request.getLongitude() +
                 "&radius=" + request.getRadius() +
