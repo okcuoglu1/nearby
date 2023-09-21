@@ -22,7 +22,7 @@ public class NearByRequest {
     @NotNull(message = "Location longitude must be provided")
     double longitude;
 
-    //message paket yap
+
     @NotNull(message = "Radius must be provided")
     @Positive(message = "Radius must be positive value")
     int radius;
