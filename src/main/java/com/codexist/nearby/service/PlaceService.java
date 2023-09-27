@@ -40,7 +40,9 @@ public class PlaceService {
         if (existingQuery != null) {
 
             System.out.println("BU KISIM CALISTI - DB DEN DATA ÇEKİLDİ");
+
             List<Place> places = existingQuery.getPlaces();
+
             return ResponseEntity.ok(places.stream().map(mapper::buildNearByResponse).collect(Collectors.toList()));
 
         }
@@ -57,9 +59,9 @@ public class PlaceService {
         List<Place> savedPlaces = placeRepository.saveAll(places);
 
 
-
         Query newQuery = queryService.saveQuery(request);
         newQuery.setPlaces(savedPlaces);
+
 
         queryService.updateQuery(newQuery);
 

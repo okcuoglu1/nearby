@@ -19,9 +19,9 @@ public class PlaceController {
 
 
     @GetMapping("/nearby")
-    public ResponseEntity<List<NearByResponse>> getNearbyPlaces(@RequestParam("latitude") double latitude,
-                                                                @RequestParam("longitude") double longitude,
-                                                                @RequestParam("radius") int radius) {
+    public ResponseEntity<List<NearByResponse>> getNearbyPlaces(@RequestParam("latitude") @Valid double latitude,
+                                                                @RequestParam("longitude") @Valid double longitude,
+                                                                @RequestParam("radius") @Valid int radius) {
 
         NearByRequest request = NearByRequest.builder().latitude(latitude).longitude(longitude).radius(radius).build();
 

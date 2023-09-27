@@ -34,13 +34,9 @@ public class QueryService {
     public Query updateQuery(Query query) {
 
         return queryRepository.save(query);
+
     }
 
-    public boolean existQuery(NearByRequest request) {
 
-        return queryRepository.existsByLatitudeAndLongitudeAndRadius(
-                request.getLatitude(), request.getLongitude(), request.getRadius()
-        );
-    }
 
 }
